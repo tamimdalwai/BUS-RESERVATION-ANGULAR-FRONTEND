@@ -1,0 +1,32 @@
+<mat-sidenav-container fullscreen class="sidenav-container">
+  
+  <mat-sidenav mode="side" class="sidenav" opened>
+    <img src="assets/profile.png" alt="Profile Image" class="profile-image">
+    <mat-nav-list class="button-list">
+      <button mat-button routerLink="/dashboard">
+        <mat-icon>dashboard</mat-icon> Dashboard
+      </button> <br>
+      <button mat-button routerLink="/buses">
+        <mat-icon>directions_bus</mat-icon> Buses
+      </button><br>
+      <button mat-button routerLink="/routes">
+        <mat-icon>map</mat-icon> Routes
+      </button><br>
+      <button mat-button routerLink="/customers">
+        <mat-icon>people</mat-icon> Customers
+      </button><br>
+      <button mat-button routerLink="/bookings">
+        <mat-icon>book</mat-icon> Bookings
+      </button><br>
+      <button mat-button routerLink="/seats">
+        <mat-icon>airline_seat_recline_normal</mat-icon> Seats
+      </button><br>
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <!-- Main content -->
+  <mat-sidenav-content class="sidenav-content">
+    <h1 class="header">Welcome , Admin</h1>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

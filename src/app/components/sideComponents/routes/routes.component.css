@@ -1,0 +1,21 @@
+/* routes.component.css */
+.routes-container {
+    padding: 20px;
+  }
+  
+  mat-table {
+    width: 100%;
+    margin-top: 20px;
+  }
+  
+  button {
+    margin-top: 10px;
+  }
+  
+  mat-cell {
+    max-width: 200px; /* Adjust the max-width as needed */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  

@@ -1,0 +1,39 @@
+<!-- add-route-form-dialog.component.html -->
+<h1 mat-dialog-title>Add Route</h1>
+<div mat-dialog-content>
+  <form [formGroup]="addRouteForm" (ngSubmit)="onSubmit()">
+    <mat-form-field>
+      <input matInput placeholder="ID" formControlName="id" required>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput placeholder="From" formControlName="from" required>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="To" formControlName="to" required>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Bus Number</mat-label>
+      <mat-select formControlName="busNumber" required>
+        <mat-option *ngFor="let bus of availableBuses" [value]="bus.busNumber">
+          {{ bus.busNumber }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput [matDatepicker]="picker" placeholder="Departure Date" formControlName="departureDate" required>
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Departure Time" formControlName="departureTime" type="time" required>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Cost" formControlName="cost" required>
+    </mat-form-field>
+  </form>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onCancel()">Cancel</button>
+  <button mat-button color="primary" type="submit" (click)="onSubmit()">Add Route</button>
+</div>

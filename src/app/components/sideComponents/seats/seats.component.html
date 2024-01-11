@@ -1,0 +1,16 @@
+<!-- bus-seats.component.html -->
+<div class="search-container">
+  <mat-form-field>
+    <input matInput placeholder="Enter Bus Number" [(ngModel)]="busNumber" />
+  </mat-form-field>
+  <button mat-raised-button color="primary" (click)="searchSeats()">Search</button>
+</div>
+
+<div class="seat-container">
+  <div *ngFor="let row of seatRows" class="seat-row">
+    <div *ngFor="let seat of row" class="seat" [ngClass]="getSeatClass(seat)">
+      {{ seat.seatNumber }}
+    </div>
+    <br *ngIf="row.length > 0" />
+  </div>
+</div>

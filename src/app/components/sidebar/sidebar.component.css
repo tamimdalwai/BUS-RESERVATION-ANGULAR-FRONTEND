@@ -1,0 +1,36 @@
+/* Add this to your styles.css or styles.scss */
+
+.sidenav-container {
+  height: 100vh; /* Set the height of the container to 100% of the viewport height */
+}
+
+.sidenav {
+  width: 200px; /* Set the width of the side nav */
+  
+  box-shadow: 5px 5px #b5b5b5;;
+}
+
+.profile-image {
+  width: 100px; /* Adjust the width of the profile image */
+  height: 100px; /* Adjust the height of the profile image */
+  border-radius: 50%; /* Make the image circular */
+  margin: 40px; /* Add some margin around the image */
+}
+
+.mat-nav-list {
+  padding: 20px; /* Add padding to the list items */
+}
+
+.sidenav-content {
+  padding: 20px; /* Add padding to the main content area */
+}
+
+button{
+  margin: 0.5rem;
+}
+
+.header{
+  font-size: 2rem;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: bold;
+}

@@ -1,0 +1,78 @@
+<div class="dashboard-container">
+
+    <mat-card class="dashboard-card" (click)="navigateTo('dashboard')">
+      <mat-card-header class="dashboard-header dashboard-header-total-bookings">
+        <mat-card-title>Total Bookings</mat-card-title>
+      </mat-card-header>
+      <mat-card-content class="dashboard-content">
+        <div class="dashboard-count">
+          
+             <h1 style="font-size: 2rem;font-family: Arial, Helvetica, sans-serif;">{{ totalBookings }}</h1><mat-icon>book</mat-icon>
+         
+        </div>
+        <button class="dashboard-link" mat-button routerLink="/bookings">View More</button>
+      </mat-card-content>
+    </mat-card>
+  
+    <mat-card class="dashboard-card" (click)="navigateTo('buses')">
+        <mat-card-header class="dashboard-header dashboard-header-total-buses">
+          <mat-card-title>Total Buses</mat-card-title>
+        </mat-card-header>
+        <mat-card-content class="dashboard-content">
+          <div class="dashboard-count">
+            <h1 style="font-size: 2rem;font-family: Arial, Helvetica, sans-serif;"> {{ totalBuses }}</h1>
+              <mat-icon>directions_bus</mat-icon>
+            
+          </div>
+          <button class="dashboard-link" mat-button routerLink="/buses">View More</button>
+        </mat-card-content>
+      </mat-card>
+    
+      <mat-card class="dashboard-card" (click)="navigateTo('routes')">
+        <mat-card-header class="dashboard-header dashboard-header-total-routes">
+          <mat-card-title>Total Routes</mat-card-title>
+        </mat-card-header>
+        <mat-card-content class="dashboard-content">
+          <div class="dashboard-count">
+            <h1 style="font-size: 2rem;font-family: Arial, Helvetica, sans-serif;"> {{ totalRoutes }}</h1>
+          
+              <mat-icon>map</mat-icon> 
+        
+          </div>
+          <button class="dashboard-link" mat-button routerLink="/routes">View More</button>
+        </mat-card-content>
+      </mat-card>
+    
+      <mat-card class="dashboard-card" (click)="navigateTo('customers')">
+        <mat-card-header class="dashboard-header dashboard-header-total-customers">
+          <mat-card-title>Total Customers</mat-card-title>
+        </mat-card-header>
+        <mat-card-content class="dashboard-content">
+        
+          <div class="dashboard-count">
+           
+              <h1 style="font-size: 2rem;font-family: Arial, Helvetica, sans-serif;"> {{ totalCustomers }}</h1>
+              <mat-icon>people</mat-icon> 
+         
+          </div>
+          <button class="dashboard-link" mat-button routerLink="/customers">View More</button>
+        </mat-card-content>
+      </mat-card>
+    
+      <mat-card class="dashboard-card" (click)="navigateTo('earning')">
+        <mat-card-header class="dashboard-header dashboard-header-total-earning">
+          <mat-card-title>Total Earning</mat-card-title>
+        </mat-card-header>
+        <mat-card-content class="dashboard-content">
+          <div class="dashboard-count">
+            
+              <h1 style="font-size: 2rem;font-family: Arial, Helvetica, sans-serif;">{{ totalEarning }}</h1> <mat-icon >attach_money</mat-icon>
+          
+          </div>
+          
+        </mat-card-content>
+      </mat-card>
+    
+  
+  </div>
+  

@@ -1,0 +1,51 @@
+/* bus-seats.component.css */
+.search-container {
+  margin-bottom: 20px;
+}
+
+.seat-container {
+  display: grid;
+  gap: 10px;
+}
+
+.seat-row {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 10px;
+  flex-wrap: wrap; /* Ensure flex items wrap to the next line */
+}
+
+.seat {
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  border: 1px solid #ccc;
+}
+
+.seat-hidden {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  border: 1px solid #ccc;
+  margin-left: 1rem;
+}
+
+.available {
+  background-color: green;
+  color: white;
+}
+
+.reserved {
+  background-color: red;
+  color: white;
+}
+
+.empty-space {
+  visibility: hidden;
+}

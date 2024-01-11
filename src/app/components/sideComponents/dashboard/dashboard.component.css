@@ -1,0 +1,89 @@
+.dashboard-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 16px;
+    padding: 16px;
+  }
+  
+  .dashboard-card {
+    width: 100%;
+    cursor: pointer;
+  }
+  
+  .dashboard-header {
+    padding: 12px;
+  }
+  
+  .dashboard-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100px;
+  }
+  
+ 
+  
+  .dashboard-link {
+    color: #007bff; /* Blue color for the link */
+    cursor: pointer;
+  }
+  /* Different header colors for each metric */
+  .dashboard-header-total-bookings {
+    background-color: #ff5722; /* Deep Orange color */
+  }
+  
+  .dashboard-header-total-buses {
+    background-color: #2196f3; /* Blue color */
+  }
+  
+  .dashboard-header-total-routes {
+    background-color: #ff9800; /* Orange color */
+  }
+  
+  .dashboard-header-total-customers {
+    background-color: #e91e63; /* Pink color */
+  }
+  
+  .dashboard-header-total-admins {
+    background-color: #9c27b0; /* Purple color */
+  }
+  
+  .dashboard-header-total-earning {
+    
+    background-color: #4caf50; /* Green color */
+  }
+  
+
+
+  .dashboard-header-total-bookings-icon {
+    color: #ff5722; /* Deep Orange color */
+  }
+  
+  .dashboard-header-total-buses-icon {
+    color: #2196f3; /* Blue color */
+  }
+  
+  .dashboard-header-total-routes-icon {
+   color: #ff9800; /* Orange color */
+  }
+  
+  .dashboard-header-total-customers-icon {
+    color: #e91e63; /* Pink color */
+  }
+  
+  .dashboard-header-total-admins-icon {
+    color: #9c27b0; /* Purple color */
+  }
+  
+  .dashboard-header-total-earning-icon {
+    
+    color: #4caf50; /* Green color */
+  }
+  
+
+
+  .dashboard-count {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  

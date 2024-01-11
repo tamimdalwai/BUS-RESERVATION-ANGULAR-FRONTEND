@@ -1,0 +1,127 @@
+<!-- routes.component.html -->
+<div class="routes-container">
+
+    <h2 class="mat-display-2">Routes</h2>
+  
+    <!-- Add Route Form Button -->
+    <button mat-raised-button color="primary" (click)="openAddRouteForm()">Add Route</button>
+  
+    <!-- Routes Table -->
+    <mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+  
+      <!-- ID Column -->
+      <ng-container matColumnDef="id">
+        <mat-header-cell *matHeaderCellDef> ID </mat-header-cell>
+        <mat-cell *matCellDef="let route"> {{ route.routeId }} </mat-cell>
+      </ng-container>
+       <!-- Departure From Column -->
+    <ng-container matColumnDef="departureFrom">
+      <mat-header-cell *matHeaderCellDef> Departure From </mat-header-cell>
+      <mat-cell *matCellDef="let route">
+        <ng-container *ngIf="!route.editMode">{{ route.departureFrom }}</ng-container>
+        <ng-container *ngIf="route.editMode">
+          <input matInput [(ngModel)]="route.departureFrom" placeholder="Departure From">
+        </ng-container>
+      </mat-cell>
+    </ng-container>
+  
+     <!-- Departure To Column -->
+<ng-container matColumnDef="departureTo">
+  <mat-header-cell *matHeaderCellDef> Departure To </mat-header-cell>
+  <mat-cell *matCellDef="let route">
+    <ng-container *ngIf="!route.editMode">{{ route.departureTo }}</ng-container>
+    <ng-container *ngIf="route.editMode">
+      <input matInput [(ngModel)]="route.departureTo" placeholder="Departure To">
+    </ng-container>
+  </mat-cell>
+</ng-container>
+
+<!-- routes.component.html -->
+<!-- ... (previous code) -->
+
+<ng-container matColumnDef="busNumber">
+  <mat-header-cell *matHeaderCellDef> Bus Number </mat-header-cell>
+  <mat-cell *matCellDef="let route">
+    <ng-container *ngIf="!route.editMode">{{ route.bus['busNumber'] }}</ng-container>
+    <ng-container *ngIf="route.editMode">
+      <mat-form-field>
+        <mat-label>Bus Number</mat-label>
+        <!-- Use [(ngModel)] for two-way binding -->
+        <mat-select [(ngModel)]="route.bus.busNumber" name="busNumber" required>
+          <mat-option *ngFor="let bus of availableBuses" [value]="bus.busNumber">
+            {{ bus.busNumber }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </ng-container>
+  </mat-cell>
+</ng-container>
+
+<!-- ... (rest of the code) -->
+
+
+
+<!-- Departure Date Column -->
+<ng-container matColumnDef="departureDate">
+  <mat-header-cell *matHeaderCellDef> Departure Date </mat-header-cell>
+  <mat-cell *matCellDef="let route">
+    <ng-container *ngIf="!route.editMode">{{ route.departureDate | date:'shortDate' }}</ng-container>
+    <ng-container *ngIf="route.editMode">
+      <input matInput [(ngModel)]="route.departureDate" placeholder="Departure Date">
+    </ng-container>
+  </mat-cell>
+</ng-container>
+
+<!-- Departure Time Column -->
+<ng-container matColumnDef="departureTime">
+  <mat-header-cell *matHeaderCellDef> Departure Time </mat-header-cell>
+  <mat-cell *matCellDef="let route">
+    <ng-container *ngIf="!route.editMode">{{ route.departureTime }}</ng-container>
+    <ng-container *ngIf="route.editMode">
+      <input matInput [(ngModel)]="route.departureTime" placeholder="Departure Time">
+    </ng-container>
+  </mat-cell>
+</ng-container>
+
+<!-- Cost Column -->
+<ng-container matColumnDef="cost">
+  <mat-header-cell *matHeaderCellDef> Cost </mat-header-cell>
+  <mat-cell *matCellDef="let route">
+    <ng-container *ngIf="!route.editMode">{{ route.cost | currency:'USD':'symbol':'1.2-2' }}</ng-container>
+    <ng-container *ngIf="route.editMode">
+      <input matInput [(ngModel)]="route.cost" placeholder="Cost">
+    </ng-container>
+  </mat-cell>
+</ng-container>
+
+  
+<ng-container matColumnDef="actions">
+  <mat-header-cell *matHeaderCellDef> Actions </mat-header-cell>
+  <mat-cell *matCellDef="let route">
+    <ng-container *ngIf="!route.editMode">
+      <button mat-icon-button color="primary" (click)="editRoute(route)">
+        <mat-icon>edit</mat-icon>
+      </button>
+    </ng-container>
+    <ng-container *ngIf="route.editMode">
+      <button mat-icon-button color="primary" (click)="saveRoute(route)">
+        <mat-icon>save</mat-icon>
+      </button>
+      <button mat-icon-button color="warn" (click)="route.editMode = false">
+        <mat-icon>cancel</mat-icon>
+      </button>
+    </ng-container>
+    <button mat-icon-button color="warn" (click)="deleteRoute(route)">
+      <mat-icon>delete</mat-icon>
+    </button>
+  </mat-cell>
+</ng-container>
+
+  
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  
+    </mat-table>
+  
+  </div>
+  

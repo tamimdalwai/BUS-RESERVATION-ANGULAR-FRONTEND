@@ -1,0 +1,73 @@
+<!-- add-booking-form-dialog.component.html -->
+<h1 mat-dialog-title>Add Booking</h1>
+<div mat-dialog-content>
+  <form [formGroup]="addBookingForm" (ngSubmit)="onSubmit()">
+    <mat-form-field>
+      <mat-label>Customer</mat-label>
+      <mat-select formControlName="customer" (selectionChange)="onCustomerSelected()" required>
+        <mat-option *ngFor="let customer of availableCustomers" [value]="customer.customerId">
+          {{ customer.customerId }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Customer Name</mat-label>
+      <input matInput [value]="addBookingForm.get('customerName')?.value" formControlName="customerName">
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Contact</mat-label>
+      <input matInput [value]="addBookingForm.get('contact')?.value" formControlName="contact" [disabled]="true">
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Route</mat-label>
+      <mat-select formControlName="route" (selectionChange)="onRouteSelected()"  required>
+        <mat-option *ngFor="let route of availableRoutes" [value]="route.routeId">
+          {{ route.routeId}} - {{ route.departureFrom }} to {{ route.departureTo }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Bus Number</mat-label>
+      <input matInput [value]="addBookingForm.get('busNumber')?.value" formControlName="busNumber">
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Depature Date </mat-label>
+      <input matInput [value]="addBookingForm.get('departureDate')?.value" formControlName="departureDate">
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Depature Time</mat-label>
+      <input matInput [value]="addBookingForm.get('departureTime')?.value" formControlName="departureTime">
+    </mat-form-field>
+    
+    <mat-form-field>
+      <mat-label>Seat Number</mat-label>
+      <mat-select placeholder="Select Seat Number" formControlName="seatNumber" required>
+        <mat-option *ngFor="let seat of seatNumbers" [value]="seat">{{ seat }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Booking Date Time</mat-label>
+      <input matInput [matDatepicker]="picker" placeholder="Booking Time" formControlName="bookingTime" required>
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+
+
+    <mat-form-field>
+     
+      <mat-label>Amount in dollars </mat-label>
+      <input matInput placeholder="Amount" formControlName="amount" required>
+    </mat-form-field>
+
+    
+  </form>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onCancel()">Cancel</button>
+  <button mat-button color="primary" type="submit" (click)="onSubmit()">Add Booking</button>
+</div>
